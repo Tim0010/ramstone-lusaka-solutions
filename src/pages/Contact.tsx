@@ -62,8 +62,15 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-dark to-gray-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-r from-dark to-gray-700 text-white py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=600&fit=crop')"
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
@@ -188,26 +195,31 @@ const Contact = () => {
             {/* Map & Location Info */}
             <div>
               <h2 className="text-3xl font-bold text-dark mb-6">Find Us</h2>
-              <Card className="border-0 shadow-lg mb-6">
-                <CardContent className="p-0">
-                  <div className="bg-gradient-to-br from-primary to-secondary h-64 rounded-t-lg flex items-center justify-center">
+              <Card className="border-0 shadow-lg mb-6 overflow-hidden">
+                <div className="relative h-64">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                    alt="Office workspace"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 flex items-center justify-center">
                     <div className="text-center text-white">
                       <MapPin className="w-16 h-16 mx-auto mb-4" />
-                      <p className="text-lg font-medium">Google Maps Integration</p>
+                      <p className="text-lg font-medium">Visit Our Location</p>
                       <p className="text-sm opacity-90">23A Great East Road, Avondale, Lusaka</p>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-dark mb-3">Visit Our Location</h3>
-                    <p className="text-gray-600 mb-4">
-                      We're conveniently located on Great East Road in Avondale, easily accessible 
-                      from all parts of Lusaka. Parking is available on-site.
-                    </p>
-                    <div className="space-y-2 text-sm text-gray-600">
-                      <p><strong>Address:</strong> 23A Great East Road, Avondale, Lusaka</p>
-                      <p><strong>Landmark:</strong> Near Avondale Shopping Center</p>
-                      <p><strong>Parking:</strong> Free on-site parking available</p>
-                    </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-dark mb-3">Visit Our Location</h3>
+                  <p className="text-gray-600 mb-4">
+                    We're conveniently located on Great East Road in Avondale, easily accessible 
+                    from all parts of Lusaka. Parking is available on-site.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <p><strong>Address:</strong> 23A Great East Road, Avondale, Lusaka</p>
+                    <p><strong>Landmark:</strong> Near Avondale Shopping Center</p>
+                    <p><strong>Parking:</strong> Free on-site parking available</p>
                   </div>
                 </CardContent>
               </Card>
@@ -246,32 +258,38 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-5"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=1200&h=800&fit=crop')"
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Frequently Asked Questions</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div>
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-dark mb-2">Do you provide free quotes?</h3>
               <p className="text-gray-600 text-sm mb-4">
                 Yes! We provide free estimates for all auto repair services. Contact us for a detailed quote.
               </p>
             </div>
-            <div>
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-dark mb-2">Do you offer bulk discounts?</h3>
               <p className="text-gray-600 text-sm mb-4">
                 Absolutely. We offer special pricing for bulk orders and regular business customers.
               </p>
             </div>
-            <div>
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-dark mb-2">What payment methods do you accept?</h3>
               <p className="text-gray-600 text-sm mb-4">
                 We accept cash, mobile money, and bank transfers for your convenience.
               </p>
             </div>
-            <div>
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-dark mb-2">Do you deliver supplies?</h3>
               <p className="text-gray-600 text-sm mb-4">
                 Yes, we offer delivery services within Lusaka for large orders. Contact us for details.

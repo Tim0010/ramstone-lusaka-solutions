@@ -10,13 +10,15 @@ const Index = () => {
       icon: <Wrench className="w-8 h-8 text-primary" />,
       title: "Auto Repair Services",
       description: "Professional panel beating, spray painting, and auto spare parts",
-      link: "/auto-repair"
+      link: "/auto-repair",
+      image: "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=600&h=400&fit=crop"
     },
     {
       icon: <Package className="w-8 h-8 text-primary" />,
       title: "General Supply",
       description: "Stationery, hardware, electrical, painting, and construction tools",
-      link: "/general-supply"
+      link: "/general-supply",
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop"
     }
   ];
 
@@ -41,8 +43,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary to-secondary text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&h=800&fit=crop')"
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Great Professionalism.<br />
@@ -75,11 +84,19 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="mb-4 flex justify-center">
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
                     {service.icon}
                   </div>
+                </div>
+                <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-semibold text-dark mb-4">{service.title}</h3>
                   <p className="text-gray-600 mb-6">{service.description}</p>
                   <Button asChild className="bg-primary hover:bg-orange-600">
@@ -93,14 +110,20 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop')"
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Why Choose Ramstone?</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-lg">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="w-8 h-8 text-white" />
               </div>
@@ -108,7 +131,7 @@ const Index = () => {
               <p className="text-gray-600">Expert technicians with years of experience in automotive repair and supply.</p>
             </div>
             
-            <div className="text-center">
+            <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-lg">
               <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Package className="w-8 h-8 text-white" />
               </div>
@@ -116,7 +139,7 @@ const Index = () => {
               <p className="text-gray-600">Comprehensive range of auto parts and general supplies for all your needs.</p>
             </div>
             
-            <div className="text-center">
+            <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-lg">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
@@ -153,8 +176,14 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-dark text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-dark text-white py-16 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1200&h=800&fit=crop')"
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Contact us today for a quote or visit our location on Great East Road, Avondale.
